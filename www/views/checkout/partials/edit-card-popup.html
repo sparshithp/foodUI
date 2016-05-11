@@ -1,0 +1,29 @@
+<div class="list">
+  <div class="row">
+    <label class="col item item-input item-stacked-label">
+      <span class="input-label">Credit Card Number</span>
+      <input type="text" ng-model="card.number" placeholder="Required">
+    </label>
+  </div>
+  <div class="row">
+    <label class="col item item-input item-stacked-label">
+      <span class="input-label">Name on Card</span>
+      <input type="text" ng-model="card.full_name" placeholder="Required">
+    </label>
+  </div>
+  <div class="row">
+    <label class="col col-50 item item-input item-stacked-label">
+      <span class="input-label">Expiration</span>
+      <input type="text" ng-model="card.expiration" placeholder="mm/yy">
+    </label>
+    <label class="col col-50 item item-input item-stacked-label">
+      <span class="input-label">CCV</span>
+      <input type="text" ng-model="card.ccv" placeholder="Required">
+    </label>
+  </div>
+  <div class="row">
+    <a class="button button-block button-assertive" ng-click="deleteCreditCard(card)">
+      <span>Delete card</span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<ion-scroll direction="y" ng-controller="FiltersCtrl">
+
+  <div class="card list filter-group range-filter-group">
+    <div class="distance-filters">
+      <div class="item item-divider">
+        Distance
+        <span class="range-output">{{distance_filter}} mi</span>
+      </div>
+      <div class="item range">
+        <input type="range" name="distance_filter" min="0" max="100" ng-model="distance_filter">
+      </div>
+    </div>
+  </div>
+
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Budget
+    </div>
+    <ion-list class="budget-filters filter-options-container">
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'Any'">
+        <span class="radio-tag-content">Any</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$'">
+        <span class="radio-tag-content">$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$'">
+        <span class="radio-tag-content">$$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$$'">
+        <span class="radio-tag-content">$$$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$$$'">
+        <span class="radio-tag-content">$$$$</span>
+      </tag-radio>
+    </ion-list>
+  </div>
+</ion-scroll>
