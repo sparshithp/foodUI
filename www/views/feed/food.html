@@ -1,5 +1,13 @@
 <ion-view class="feed-food-view feed-sub-view" cache-view="false">
   <ion-content>
+    <div align="center" class="address-chooser">
+      <select align="center" class="button button-block icon-right addresses-popover-button"
+              ng-model="selected"
+              ng-options="area for area in areas"
+              ng-change="broadcast(selected)">
+        <option value="">Select area</option>
+      </select>
+    </div>
     <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
     <div class="products-row">
       <div class="food-product-container" ng-repeat="product in results = products">

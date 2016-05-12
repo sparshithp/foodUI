@@ -6,7 +6,11 @@ angular.module('your_app_name.feed.controllers', [])
 	};
 })
 
-.controller('FoodCtrl', function($scope) {
+.controller('FoodCtrl', function($scope, $ionicPopover) {
+  $scope.areas = ["BTM", "Whitefield"];
+  $scope.broadcast = function(selectedArea){
+    console.log(selectedArea);
+  };
 	$scope.products = [
     {
       "id": 1,

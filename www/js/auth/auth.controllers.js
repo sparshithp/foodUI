@@ -15,11 +15,12 @@ angular.module('your_app_name.auth.controllers', [])
     	$auth.login({ email: $scope.user.email, password: $scope.user.password })
         .then(function(res) {
             console.log($auth.isAuthenticated());
-			$ionicLoading.hide();            
+          console.log("**"+$auth.getToken());
+			$ionicLoading.hide();
             $state.go('main.app.feed.food');
         })
         .catch(function(response) {
-        	$ionicLoading.hide();            
+        	$ionicLoading.hide();
             console.log(response);
             $scope.error = "wrong password";
         });

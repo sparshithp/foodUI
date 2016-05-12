@@ -62,6 +62,4 @@ angular.module('your_app_name.account.controllers', [])
 .controller('OrdersCtrl', function($scope, orders, OrderService) {
   $scope.orders = orders;
 })
-
-
 ;
