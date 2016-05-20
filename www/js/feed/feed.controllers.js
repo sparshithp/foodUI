@@ -6,11 +6,34 @@ angular.module('your_app_name.feed.controllers', [])
 	};
 })
 
-.controller('FoodCtrl', function($scope, $ionicPopover) {
-  $scope.areas = ["BTM", "Whitefield"];
+.controller('FoodCtrl', function($scope, $http, $ionicPopover) {
+
+  //Populate areas
+  $http.get("http://localhost:3000/area/list").then(function(res, status) {
+    $scope.areas = res.data.areas;
+    console.log(res.data);
+  }, function(res, status) {
+    if(res.status == 401){
+    }else{
+    }
+  });
+
+
   $scope.prodcuts = [];
   $scope.broadcast = function(selectedArea){
-    console.log(selectedArea);
+
+    //Populate products
+    $http.get("http://localhost:3000/meal/list/"+selectedArea).then(function(res, status) {
+      console.log(res.data.meals);
+      $scope.meals = res.data.meals;
+    }, function(res, status) {
+      if(res.status == 401){
+      }else{
+      }
+    });
+
+
+    console.log("*****Selected area: "+ selectedArea);
     if(selectedArea){
        $scope.products = [
        {

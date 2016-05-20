@@ -3,7 +3,7 @@
     <div align="center" class="address-chooser">
       <select align="center" class="button button-block icon-right addresses-popover-button"
               ng-model="selected"
-              ng-options="area for area in areas"
+              ng-options="area._id as area.area for area in areas"
               ng-change="broadcast(selected)">
         <option value="">Select area</option>
       </select>
